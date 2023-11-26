@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace add
+{
+    internal class Class14
+    {
+        static void Main(string[] args)
+        {
+            List<string> studentNames = new List<string>
+            {
+                "Vamika",
+                "Nagur",
+                "Vali"
+            };
+            foreach (string s in studentNames)
+            {
+                Console.WriteLine(s);
+            }        
+        }
+    }
+}
+
