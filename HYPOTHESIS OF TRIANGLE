@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace add
+{
+    internal class Class12
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("enter the value of a:");
+            int a=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter the value of b:");
+            int b=Convert.ToInt32(Console.ReadLine());
+            double h;
+            h=Math.Sqrt(Math.Pow(a,2)+Math.Pow(b,2));
+            Console.WriteLine("Hypothesis of triangle:" + h);
+
+        }
+    }
+}
