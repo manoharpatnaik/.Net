@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication6
+{
+    public partial class Login : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+                HttpCookie c = new HttpCookie("MyCookie");
+                c.Value = TextBox1.Text;
+                c.Expires = DateTime.Now.AddSeconds(30);
+                Response.Cookies.Add(c);
+                Response.Redirect(“home.aspx”) ; 
+            	
+            }
+            else
+            {
+                Server.Transfer("Failure.aspx");
+            }
+
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication6
+{
+    public partial class home: System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+            string str1 = Request.Cookies["MyCookie"].Value;
+            Response.Write(str1);
+           
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication6
+{
+    public partial class Login : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+                
+            	Session["data"] = TextBox1.Text;
+Response.Redirect("Sucess.aspx");
+            }
+            else
+            {
+                Server.Transfer("Failure.aspx");
+            }
+
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication6
+{
+    public partial class home: System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+          string str1 = Session["data"].ToString();
+            Response.Write(str1);
+           
+        }
+    }
+}
+Web.config:
+<configuration>
+  <system.web>
+    <compilation debug="true" targetFramework="4.7.2" />
+    <httpRuntime targetFramework="4.7.2" />
+  <sessionState cookieless="true" mode="InProc"></sessionState>
+  </system.web>
