@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace add
+{
+    internal class Class7
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("enter a string:");
+            string s = Console.ReadLine();
+            string middle = s.Substring(1, s.Length - 2);
+            char frst = s[0];
+            char last = s[s.Length - 1];
+            string res = last + middle + frst;
+            Console.WriteLine("Final string is:");
+            Console.WriteLine(res);
+        }
+    }
+}
