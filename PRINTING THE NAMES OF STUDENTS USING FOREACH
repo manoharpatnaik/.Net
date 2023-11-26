@@ -12,9 +12,9 @@ namespace add
         {
             List<string> studentNames = new List<string>
             {
-                "Vamika",
-                "Nagur",
-                "Vali"
+                "Sai",
+                "Kumar",
+                "Shetty"
             };
             foreach (string s in studentNames)
             {
