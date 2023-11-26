@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace add
+{
+    class Constructor_Demo
+    {
+        int a, b;
+        public Constructor_Demo()   //default contructor
+        {
+            a = 0;
+            b = 0;
+        }
+        public Constructor_Demo(int a, int b)
+        {
+            this.a = a;
+            this.b = b;
+
+        }
+        public Constructor_Demo(Constructor_Demo x)
+        {
+            this.a = x.a;
+            this.b = x.b;
+        }
+        private Constructor_Demo(int a)
+        {
+            this.a = a;
+            Console.WriteLine("It is used when there are only sttaic variables in class");
+        }
+        static Constructor_Demo()
+        {
+            Console.WriteLine("static constructor");
+            Console.WriteLine("No constructor calling is required");
+            Console.WriteLine("A static constructor does not take access modifiers or have parameters.");
+            Console.WriteLine("Automatically called before the first instance  of a class is created ");
+
+        }
+        public static void Main()
+        {
+            Constructor_Demo obj = new Constructor_Demo(); //an object is created , constructor is called
+            Constructor_Demo obj1 = new Constructor_Demo(5, 6);
+            Constructor_Demo obj2 = new Constructor_Demo(obj1);
+            Constructor_Demo obj3 = new Constructor_Demo(8);
+
+            Console.WriteLine(obj3.a);
+            Console.WriteLine(obj3.b);
+            Console.Read();
+        }
+
+    }
+}
