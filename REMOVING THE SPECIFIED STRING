@@ -1,0 +1,25 @@
+using System;
+using System.CodeDom;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace add
+{
+    internal class Class6
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("enter a string:");
+            string s = Console.ReadLine();
+            Console.WriteLine("enter the position:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter the length:");
+            int b = Convert.ToInt32(Console.ReadLine());
+            s = s.Remove(a, b);
+            Console.WriteLine("final string:");
+            Console.WriteLine(s);
+        }
+    }
+}
